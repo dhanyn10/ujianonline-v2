@@ -1,9 +1,3 @@
-Kerjakan soal dengan benar!!!
-<style>
-    .butir-soal{
-        list-style:none;
-    }
-</style>
 <?php
 $matkul = $_POST['matkul'];
 include("koneksi.php");
