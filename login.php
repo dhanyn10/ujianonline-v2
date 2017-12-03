@@ -8,7 +8,7 @@ require_once("koneksi.php");
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Index</title>
+		<title>Ujian Online</title>
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 	</head>
