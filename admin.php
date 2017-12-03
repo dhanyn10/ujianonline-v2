@@ -74,6 +74,7 @@
 					"<th>c</th>".
 					"<th>d</th>".
 					"<th>benar</th>".
+					"<th>tindakan</th>".
 				"</tr>";
 		while($row = mysqli_fetch_assoc($datasoal))
 		{
@@ -99,6 +100,12 @@
 						"<td>".
 							$row['benar'].
 						"</td>".
+						"<td>".
+							"<form method='post' action='hapusdata.php'>".
+								"<input type='hidden' name='id' value='".$row['no']."'/>".
+								"<button type='submit' class='btn btn-danger btn-sm'>hapus</button>".
+							"</form>".
+						"</td>".
 					"<tr>";
 		}
 		echo "</table>";
@@ -109,18 +116,18 @@
 		$datanilai = $conn->query("SELECT * FROM nilai");
 		echo "<table class='table table-bordered'>".
 				"<tr class='bg-success text-white'>".
-					"<th>id</th>".
 					"<th>nama</th>".
+					"<th>kategori</th>".
 					"<th>nilai</th>".
 				"</tr>";
 		while($row = mysqli_fetch_assoc($datanilai))
 		{
 				echo "<tr>".
 						"<td>".
-							$row['id'].
+							$row['nama'].
 						"</td>".
 						"<td>".
-							$row['nama'].
+							$row['kategori'].
 						"</td>".
 						"<td>".
 							$row['nilai'].
