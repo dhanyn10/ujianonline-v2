@@ -17,10 +17,15 @@ else{
     } else {	
         $simpan = $conn->query("INSERT INTO user (username, password, nama, kelas, nim, batas) VALUES('$username', '$pass','$nama', '$kelas', '$nim', '1')");
         if($simpan) {
-            echo "Pendaftaran Sukses, Silahkan <a href='login.php'>Login</a>";
+            echo "Pendaftaran Sukses";
         }else{
         echo "Proses Gagal!";
         }
     }
 }
 ?>
+<script>
+setTimeout(() => {
+   window.location = "login.php";
+}, 1000);
+</script>

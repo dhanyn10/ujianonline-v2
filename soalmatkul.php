@@ -17,13 +17,35 @@ echo "<form method='post' action='hasilkerja.php'>";
         echo "<li>";
         echo $data['soal']."<br/>";//soal
         //pilihan soal
-        echo   
-            "<input type='radio' name='".$data['no']."' value='a'><label>".$data['a']."</label><br/>".
-            "<input type='radio' name='".$data['no']."' value='b'><label>".$data['b']."</label><br/>".
-            "<input type='radio' name='".$data['no']."' value='c'><label>".$data['c']."</label><br/>".
-            "<input type='radio' name='".$data['no']."' value='d'><label>".$data['d']."</label><br/>";
+        echo 
+        "<div class='form-check'>".
+            "<label class='form-check-label w-100'>".
+                    "<input class='form-check-input' type='radio' name='".$data['no']."' value='a'>".
+                    $data['a'].
+            "</label>".
+        "</div>".
+        "<div class='form-check'>".
+            "<label class='form-check-label w-100'>".
+                    "<input class='form-check-input' type='radio' name='".$data['no']."' value='b'>".
+                    $data['b'].
+            "</label>".
+        "</div>".
+        "<div class='form-check'>".
+            "<label class='form-check-label w-100'>".
+                    "<input class='form-check-input' type='radio' name='".$data['no']."' value='c'>".
+                    $data['c'].
+            "</label>".
+        "</div>".
+        "<div class='form-check'>".
+            "<label class='form-check-label w-100'>".
+                    "<input class='form-check-input' type='radio' name='".$data['no']."' value='d'>".
+                    $data['d'].
+            "</label>".
+        "</div>";
         $nomor++;
+        echo "</li>";
     }
+    echo "</ol>";
     ?>
     
         </ol>
@@ -32,8 +54,14 @@ echo "<form method='post' action='hasilkerja.php'>";
         <input type='hidden' name="hasil" "multimedia"/>
         <input type='hidden' name="menit" id='menit'/>
         <input type='hidden' name="detik" id='detik'/>
-        <input type="text" name="waktu" id="timersoal" readonly/>
-        <button type='submit'>Submit</button>
+        <div class="form-group row">
+            <div class="col-md-6">
+                <input class="form-control form-control-sm" type="text" name="waktu" id="timersoal" readonly/>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-sm btn-success" type='submit'>Submit</button>
+            </div>
+        </div>
     </form>
 <script>
 window.onload=function(){

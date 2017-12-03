@@ -1,6 +1,8 @@
 <?php session_start();
-if(isset($_SESSION['username'])) {
-header('location:index.php'); }
+if(isset($_SESSION['username']))
+{
+	header('location:index.php');
+}
 require_once("koneksi.php");
 ?>
 <!DOCTYPE html>
@@ -11,9 +13,12 @@ require_once("koneksi.php");
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container col-md-4 ml-auto mr-auto">
+		<div class="container col-md-6 ml-auto mr-auto">
 			<div class="card">
-				<div class="card-header bg-success text-white">Ujian Online</div>
+				<div class="card-header bg-success text-white">
+					Ujian Online
+					<span class="badge bg-dark float-right">developer version</span>
+				</div>
 				<div class="card-body">
 					<div class="container">
 						<form action="proseslogin.php" method="post">

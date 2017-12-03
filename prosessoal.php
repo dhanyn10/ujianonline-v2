@@ -10,6 +10,6 @@ $jawab_benar	= $_POST['jawaban_correct'];
 $query 			= $conn->query("INSERT INTO soal (kategori, soal, a, b, c, d, benar) values('$kategori','$soal','$jawabA','$jawabB','$jawabC','$jawabD','$jawab_benar')");
 if($query)
 {
-	header("location:choose.php?matkul=admin");
+	header("location:choose.php");
 }
 ?>
