@@ -122,45 +122,77 @@
 												<span aria-hidden="true">&times;</span>
 											</button>
 										</div>
-										<div class="modal-body">
-											<?php
-											$id = $row['no'];
-											$dataubah = $conn->query("SELECT * FROM soal WHERE no=$id");
-											?>
-											<form method='post' action='ubahsoal.php'>
+										<form method='post' action='ubahsoal.php'>
+											<div class="modal-body">
+												<input type='hidden' name='ubahsoal'/>
 												<input type='hidden' name='id' value='<?php echo $row['no']?>'/>
-												<div class="form-group">
-													<input class='form-control form-control-sm' type='text' name='kategori' placeholder='kategori' value='<?php echo $row['kategori']?>' maxlength='20'/>
+												<div class="form-group row">
+													<div class="col-md-4">
+														kategori
+													</div>
+													<div class="col-md-8">
+														<input class='form-control form-control-sm' type='text' name='kategori' placeholder='kategori' value='<?php echo $row['kategori']?>' maxlength='20'/>
+													</div>
 												</div>
-												<div class="form-group">
-													<input class='form-control form-control-sm' type='text' name='soal' placeholder='soal' value="<?php echo $row['soal']?>" maxlength='1000'/>
+												<div class="form-group row">
+													<div class="col-md-4">
+														soal
+													</div>
+													<div class="col-md-8">
+														<textarea class='form-control form-control-sm' type='text' name='soal' placeholder='soal' value="<?php echo $row['soal']?>" rows="4" maxlength='1000'><?php echo $row['soal']?></textarea>
+													</div>
 												</div>
-												<div class="form-group">
-													<input class='form-control form-control-sm' type='text' name='a' placeholder='a' value="<?php echo $row['a']?>" maxlength='50'/>
+												<div class="form-group row">
+													<div class="col-md-4">
+														a
+													</div>
+													<div class="col-md-8">
+														<input class='form-control form-control-sm' type='text' name='a'value="<?php echo $row['a']?>" maxlength='50'/>
+													</div>
 												</div>
-												<div class="form-group">
-													<input class='form-control form-control-sm' type='text' name='b' placeholder='b' value="<?php echo $row['b']?>" maxlength='50'/>
+												<div class="form-group row">
+													<div class="col-md-4">
+														b
+													</div>
+													<div class="col-md-8">
+														<input class='form-control form-control-sm' type='text' name='b' value="<?php echo $row['b']?>" maxlength='50'/>
+													</div>
 												</div>
-												<div class="form-group">
-													<input class='form-control form-control-sm' type='text' name='c' placeholder='c' value="<?php echo $row['c']?>" maxlength='50'/>
+												<div class="form-group row">
+													<div class="col-md-4">
+														c
+													</div>
+													<div class="col-md-8">
+														<input class='form-control form-control-sm' type='text' name='c' value="<?php echo $row['c']?>" maxlength='50'/>
+													</div>
 												</div>
-												<div class="form-group">
-													<input class='form-control form-control-sm' type='text' name='d' placeholder='d' value="<?php echo $row['d']?>" maxlength='50'/>
+												<div class="form-group row">
+													<div class="col-md-4">
+														d
+													</div>
+													<div class="col-md-8">
+														<input class='form-control form-control-sm' type='text' name='d' value="<?php echo $row['d']?>" maxlength='50'/>
+													</div>
 												</div>
-												<div class="form-group">
+												<div class="form-group row">
+													<div class="col-md-4">
+														benar
+													</div>
+													<div class="col-md-8">				
 													<select name="benar" class="form-control form-control-sm">
 														<option value="a">A</option>
 														<option value="b">B</option>
 														<option value="c">C</option>
 														<option value="d">D</option>
 													</select>
+													</div>
 												</div>
-											</form>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-sm btn-light" data-dismiss="modal">ubah</button>
-											<button type="button" class="btn btn-sm btn-primary">batal</button>
-										</div>
+											</div>
+											<div class="modal-footer">
+												<button type="submit" class="btn btn-sm btn-light">ubah</button>
+												<button type="button" class="btn btn-sm btn-primary data-dismiss="modal"">batal</button>
+											</div>
+										</form>
 									</div>
 								</div>
 							</div>
