@@ -16,7 +16,7 @@
   </li>
 </ul>
 <div class="tab-content">
-	<div class="tab-pane fade show active" id="tambahsoal" role="tabpanel">
+	<div class="tab-pane fade" id="tambahsoal" role="tabpanel">
 		<form action="prosessoal.php" method="post">
 			<table class="table table-bordered">
 				<tr class="bg-success text-white">
@@ -64,7 +64,7 @@
 	</div>
 	<div class="tab-pane fade" id="lihatsoal" role="tabpanel">
 	<?php
-		$datasoal = $conn->query("SELECT * FROM soal");
+		$datasoal = $conn->query("SELECT * FROM soal order by kategori");
 		echo "<table class='table table-bordered table-responsive'>".
 				"<tr class='bg-success text-white'>".
 					"<th>kategori</th>".
@@ -74,7 +74,7 @@
 					"<th>c</th>".
 					"<th>d</th>".
 					"<th>benar</th>".
-					"<th>tindakan</th>".
+					"<th colspan='2'>tindakan</th>".
 				"</tr>";
 		while($row = mysqli_fetch_assoc($datasoal))
 		{
@@ -103,9 +103,69 @@
 						"<td>".
 							"<form method='post' action='hapusdata.php'>".
 								"<input type='hidden' name='id' value='".$row['no']."'/>".
-								"<button type='submit' class='btn btn-danger btn-sm'><i class='fa fa-trash'></i></button>".
+								"<button type='submit' class='btn btn-danger btn-sm' title='hapus'><i class='fa fa-trash'></i></button>".
 							"</form>".
 						"</td>".
+						"<td>";
+						?>
+							<!-- Button trigger modal -->
+							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ubah_<?php echo $row['no'];?>">
+								<i class="fa fa-pencil-square"></i>
+							</button>
+							<!-- Modal -->
+							<div class="modal fade" id="ubah_<?php echo $row['no'];?>" tabindex="-1" role="dialog"aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Ubah Soal</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<?php
+											$id = $row['no'];
+											$dataubah = $conn->query("SELECT * FROM soal WHERE no=$id");
+											?>
+											<form method='post' action='ubahsoal.php'>
+												<input type='hidden' name='id' value='<?php echo $row['no']?>'/>
+												<div class="form-group">
+													<input class='form-control form-control-sm' type='text' name='kategori' placeholder='kategori' value='<?php echo $row['kategori']?>' maxlength='20'/>
+												</div>
+												<div class="form-group">
+													<input class='form-control form-control-sm' type='text' name='soal' placeholder='soal' value="<?php echo $row['soal']?>" maxlength='1000'/>
+												</div>
+												<div class="form-group">
+													<input class='form-control form-control-sm' type='text' name='a' placeholder='a' value="<?php echo $row['a']?>" maxlength='50'/>
+												</div>
+												<div class="form-group">
+													<input class='form-control form-control-sm' type='text' name='b' placeholder='b' value="<?php echo $row['b']?>" maxlength='50'/>
+												</div>
+												<div class="form-group">
+													<input class='form-control form-control-sm' type='text' name='c' placeholder='c' value="<?php echo $row['c']?>" maxlength='50'/>
+												</div>
+												<div class="form-group">
+													<input class='form-control form-control-sm' type='text' name='d' placeholder='d' value="<?php echo $row['d']?>" maxlength='50'/>
+												</div>
+												<div class="form-group">
+													<select name="benar" class="form-control form-control-sm">
+														<option value="a">A</option>
+														<option value="b">B</option>
+														<option value="c">C</option>
+														<option value="d">D</option>
+													</select>
+												</div>
+											</form>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-sm btn-light" data-dismiss="modal">ubah</button>
+											<button type="button" class="btn btn-sm btn-primary">batal</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<?php
+						echo "</td>".
 					"<tr>";
 		}
 		echo "</table>";
