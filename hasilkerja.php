@@ -42,7 +42,8 @@ if(isset($_POST['matkul']))
         }
         $jawab = '';
     }
-    $jawaban    = $conn->query("SELECT * from soal where kategori='$matkul'");
+    $nama = $_SESSION['username'];
+    $conn->query("INSERT INTO nilai(nama, kategori, nilai) VALUES('$nama','$matkul', $skor)");
     $skor = ($skor / $_POST['jumlahsoal']) * 100;
 
     $menit = 29-$_POST['menit'];
