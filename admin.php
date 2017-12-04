@@ -131,7 +131,7 @@
 														kategori
 													</div>
 													<div class="col-md-8">
-														<input class='form-control form-control-sm' type='text' name='kategori' placeholder='kategori' value='<?php echo $row['kategori']?>' maxlength='20'/>
+														<input class='form-control form-control-sm' type='text' name='kategori' placeholder='kategori' value='<?php echo $row['kategori']?>' maxlength='30'/>
 													</div>
 												</div>
 												<div class="form-group row">
@@ -190,7 +190,7 @@
 											</div>
 											<div class="modal-footer">
 												<button type="submit" class="btn btn-sm btn-light">ubah</button>
-												<button type="button" class="btn btn-sm btn-primary data-dismiss="modal"">batal</button>
+												<button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">batal</button>
 											</div>
 										</form>
 									</div>

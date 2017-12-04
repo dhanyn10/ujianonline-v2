@@ -26,23 +26,23 @@ require_once("koneksi.php");
 							<table class="table table-bordered">
 								<tr>
 									<td>Username</td>
-									<td><input class="form-control" type="text" value="" name="username" placeholder="username . . ."></td>
+									<td><input class="form-control" type="text" value="" name="username" placeholder="username . . ." maxlength="25"></td>
 								</tr>
 								<tr>
 									<td>Password</td>
-									<td><input class="form-control" type="text" value="" name="password" placeholder="password . . ."></td>
+									<td><input class="form-control" type="text" value="" name="password" placeholder="password . . ." maxlength="25"></td>
 								</tr>
 								<tr>
 									<td>Nama</td>
-									<td><input  class="form-control"type="text" value="" name="nama" placeholder="nama . . ."></td>
+									<td><input  class="form-control"type="text" value="" name="nama" placeholder="nama . . ." maxlength="25"></td>
 								</tr>
 								<tr>
 									<td>Kelas</td>
-									<td><input class="form-control" type="text" value="" name="kelas" placeholder="kelas . . ."></td>
+									<td><input class="form-control" type="text" value="" name="kelas" placeholder="kelas . . ." maxlength="25"></td>
 								</tr>
 								<tr>
 									<td>NIM</td>
-									<td><input class="form-control" type="text" value="" name="nim" placeholder="nim . . ."></td>
+									<td><input class="form-control" type="text" value="" name="nim" placeholder="nim . . ." maxlength="10"></td>
 								</tr>
 							</table>
 							<div class="form-group">
