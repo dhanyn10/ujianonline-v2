@@ -14,8 +14,6 @@ if(isset($_POST['matkul']))
     {
         $tambahskor = false;
         foreach($row as $key => $value)
-        //no 9
-        //benar a
         {
             if($key == 'benar')
             {
@@ -27,7 +25,7 @@ if(isset($_POST['matkul']))
             }
             if($tambahskor == false)
             {   
-                foreach($_POST as $pkey => $pvalue) //9 a
+                foreach($_POST as $pkey => $pvalue)
                 {
                     if($nomor == $pkey && $jawab == $pvalue)
                     {

@@ -103,7 +103,7 @@
 						"<td>".
 							"<form method='post' action='hapusdata.php'>".
 								"<input type='hidden' name='id' value='".$row['no']."'/>".
-								"<button type='submit' class='btn btn-danger btn-sm'>hapus</button>".
+								"<button type='submit' class='btn btn-danger btn-sm'><i class='fa fa-trash'></i></button>".
 							"</form>".
 						"</td>".
 					"<tr>";
