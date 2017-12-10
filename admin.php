@@ -104,7 +104,7 @@
 									</form>
 								</div>
 								<div class="col-6">
-									<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ubah_<?php echo $row['no'];?>">
+									<button type="button" class="btn btn-primary btn-sm" title="edit" data-toggle="modal" data-target="#ubah_<?php echo $row['no'];?>">
 										<i class="fa fa-pencil-square"></i>
 									</button>
 									<div class="modal fade" id="ubah_<?php echo $row['no'];?>" tabindex="-1" role="dialog"aria-hidden="true">
