@@ -11,3 +11,14 @@ $db         = "ujian";
 
 $conn= mysqli_connect($servername, $user, $password, $db);
 ?>
+<style>
+body{
+    background:url('testonline.jpg');
+    background-position:fixed;
+    background-size:cover;
+}
+.tengah{
+    top:50%;
+    transform:translate(0, -50%);
+}
+</style>

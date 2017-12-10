@@ -13,7 +13,7 @@ require_once("koneksi.php");
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container col-md-6 ml-auto mr-auto">
+		<div class="container tengah col-md-6 ml-auto mr-auto">
 			<div class="card">
 				<div class="card-header bg-success text-white">
 					Ujian Online
