@@ -99,7 +99,7 @@
 							<div class="row">
 								<div class="col-6">
 									<form method='post' action='hapusdata.php'>
-										<input type='hidden' name='id' value='".$row['no']."'/>
+										<input type='hidden' name='id' value='<?php echo $row['no'] ?>'/>
 										<button type='submit' class='btn btn-danger btn-sm' title='hapus'><i class='fa fa-trash'></i></button>
 									</form>
 								</div>
